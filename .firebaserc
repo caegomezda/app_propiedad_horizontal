@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "apppropiedadhorizontal": {
+      "hosting": {
+        "app": [
+          "apppropiedadhorizontal"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "apppropiedadhorizontal"
+  }
+}

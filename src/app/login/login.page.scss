@@ -1,0 +1,118 @@
+ion-toolbar{
+    --background: #ffffff;
+//   --background: linear-gradient(#eaf3f3 %, #71c6ca 10%);
+
+}
+ion-content{
+    // --background: #ffffff;
+    --background: linear-gradient(#ffffff 0%, #71c6ca 100%);
+
+    #header{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        
+        // img {
+            // width: 340px;
+            // height: 118px;
+            // border: 0;
+            // margin-top: 10%;
+        // }
+        ion-icon{
+            margin-top:5%;
+            width: 130px;
+            height: 130px;
+
+        }
+    }
+
+    .form {
+        margin-top: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        ion-list {
+            padding-bottom: 8px;
+        }
+    
+        h2 {
+            margin: 0;
+            // color: var(--text-light);
+            color: #71c6ca;
+            font-size: .95rem;
+            margin-bottom: 30px;
+        }
+    
+        ion-item{
+            border-top: 30px;
+            border-radius: 18px;
+            height:44px;
+            box-shadow: 1px 8px 8px 0px rgba(0,0,0,0.08);
+            --highlight-height: 0px;
+            background-color: rgba(53, 174, 183, 0.38);
+            ion-input{
+                font-size:18px;
+                --padding-top:14px;
+                --padding-bottom:14px;
+                --padding-start:5px;
+                // correr boton de borrar
+                width: 258px;
+            }
+            a{
+                font-size:17px;
+                letter-spacing: 0.5px;
+                text-decoration: none;
+            }
+            
+        }
+    
+    }
+    // #form{
+    //     margin-top:16%;
+
+    //     padding-left: 30px;
+    //     padding-right: 30px;
+    //     // --background: linear-gradient(#eaf3f3 0%, #71c6ca 100%);
+    //     background-color: inherit;
+    //     ion-label{
+    //         font-size: 20px;
+    //     }
+    //     ion-icon{
+    //         width: 36px;
+    //         height: 36px;
+    //     }
+    //     #pencil{
+    //         width: 22px;
+    //         height: 22px;      
+    //     }
+    //     h2{
+    //         font-size: 20px;
+    //         font-weight: 700;
+    //     }
+    // }
+    ion-button{
+        position: relative;
+        left: 216px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    ion-input{
+        margin: top 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    app-button{
+        margin-top: 20px;
+    }
+}
+
+.regular{
+    color: #71c6ca;
+}
+
+.titulo{
+    color: #71c6ca;
+}
+
+ion-list{
+    background-color: inherit;
+}

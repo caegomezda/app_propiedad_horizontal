@@ -8,20 +8,21 @@
   
     <div class="user-div">
         <div class="first-div" slot="end" >
-          <ion-label class="welcome">Bienvenid@</ion-label>
-          <ion-label class="name">Santiago</ion-label>
+          <ion-label class="welcome">Bienvenido</ion-label>
+          <ion-label class="name">#nombre_usuario</ion-label>
         </div>
-        <img src="assets/img/icono-travel.png">
+        <img src="../../assets/img/icon-apao.png">
     </div>
   
     <div class="content-div animated bounceInUp" >
-      <ion-label class="hello">Hola,Selecciona un servicio </ion-label>
+      <ion-label class="hello">Selecciona un servicio</ion-label>
   
       <ion-grid fixed>
         <ion-row>
           <ion-col size="6" (click)="goToSubject(item)" *ngFor="let item of (subjects )">
             <div class="col-div">
               <img src="{{item.icon}}" >
+              <!-- <a href="https://www.flaticon.es/iconos-gratis/sensible" title="sensible iconos">Sensible iconos creados por xnimrodx - Flaticon</a> -->
               <ion-label>{{item.name}}</ion-label>
             </div>
           </ion-col>

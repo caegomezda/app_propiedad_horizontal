@@ -14,32 +14,51 @@ export class HomePage {
     private router: Router,
     private utilities : UtilitiesService) { }
 
-
   ngOnInit() {
     this.subjects=[
       {
-        icon: 'assets/icon/person-outline.svg',
-        name: 'Perfil',
+        icon: '../../assets/icon/temporal-icon.png',
+        name: '#servicio_por_definir',
         id: '/profile'
       },
       {
-        icon: 'assets/icon/car-sport-outline.svg',
-        name: 'Servicio de taxis',
+        icon: '../../assets/icon/temporal-icon.png',
+        name: '#servicio_por_definir',
         id: '/principal'
       },
       {
-        icon: 'assets/icon/navigate-outline.svg',
-        name: 'Viaje intermunicipal',
+        icon: '../../assets/icon/temporal-icon.png',
+        name: '#servicio_por_definir',
         id: '/intermunicipal'
       },
       {
-        icon: 'assets/icon/help-outline.svg',
-        name: 'Ayuda',
+        icon: '../../assets/icon/temporal-icon.png',
+        name: '#servicio_por_definir',
+        id: '/contac'
+      },      
+      {
+        icon: '../../assets/icon/temporal-icon.png',
+        name: '#servicio_por_definir',
+        id: '/profile'
+      },
+      {
+        icon: '../../assets/icon/temporal-icon.png',
+        name: '#servicio_por_definir',
+        id: '/principal'
+      },
+      {
+        icon: '../../assets/icon/temporal-icon.png',
+        name: '#servicio_por_definir',
+        id: '/intermunicipal'
+      },
+      {
+        icon: '../../assets/icon/temporal-icon.png',
+        name: '#servicio_por_definir',
         id: '/contac'
       },
     ];
   }
-  
+  //<a href="https://www.flaticon.es/iconos-gratis/sensible" title="sensible iconos">Sensible iconos creados por xnimrodx - Flaticon</a>
   goToSubject(item){
     this.router.navigateByUrl(item.id, {replaceUrl: true});
   }

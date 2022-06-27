@@ -32,41 +32,63 @@ export class HomePage {
     },
   ]
 
+  subjects1:any ={
+    icon: '../../assets/icon/temporal-icon.png',
+    name: 'Cartelera',
+    id: '/cartelera'
+  }
+
+  subjects2:any ={
+    icon: '../../assets/icon/temporal-icon.png',
+    name: 'Pagos',
+    id: '/pagos'
+  }
+//<ion-icon name="accessibility-outline"></ion-icon>
+// <ion-icon name="car-outline"></ion-icon>
+// <ion-icon name="megaphone-outline"></ion-icon>
+// <ion-icon name="gift-outline"></ion-icon>
+  buttonMenu:any = [
+    {
+      icon: 'megaphone-sharp',
+      name: 'Asamblea',
+      id: '/asamblea'
+    },
+    {
+      icon: 'gift-sharp',
+      name: 'Promociones',
+      id: '/promociones'
+    },
+    {
+      icon: 'car-sharp',
+      name: 'Pico y placa',
+      id: '/cartelera'
+    },
+    {
+      icon: 'accessibility-sharp',
+      name: 'Perfil',
+      id: '/perfil'
+    }
+  ]
+  // subjects3:any ={
+  //   icon: '../../assets/icon/temporal-icon.png',
+  //   name: 'PQRS',
+  //   id: '/pqrs'
+  // }
+
   isload:Boolean = false;
   constructor(
     private router: Router,
     private utilities : UtilitiesService) { }
 
   ngOnInit() {
-    this.subjects=[
-      {
-        icon: '../../assets/icon/temporal-icon.png',
-        name: 'Cartelera',
-        id: '/cartelera'
-      },
-      {
-        icon: '../../assets/icon/temporal-icon.png',
-        name: 'Asambleas',
-        id: '/asambleas'
-      },
-      {
-        icon: '../../assets/icon/temporal-icon.png',
-        name: 'PQRS',
-        id: '/contactanos'
-      },
-      {
-        icon: '../../assets/icon/temporal-icon.png',
-        name: 'Otros',
-        id: '/otros'
-      },      
-    ];
   }
+  
   ionViewWillEnter(){
     this.isload = true
   }
   //<a href="https://www.flaticon.es/iconos-gratis/sensible" title="sensible iconos">Sensible iconos creados por xnimrodx - Flaticon</a>
   goToSubject(item){
-    this.router.navigateByUrl(item.id, {replaceUrl: true});
+    this.router.navigateByUrl(item, {replaceUrl: true});
   }
 
   goInfoCartelera(item){

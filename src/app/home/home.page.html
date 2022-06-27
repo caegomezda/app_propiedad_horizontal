@@ -21,20 +21,61 @@
     <div class="banner">
       <div *ngIf="isload" class="scroll_container">
         <div class="item_scroll" *ngFor="let item of dataCartelera" (click)="goInfoCartelera(item)">
+          <div class="div-style-card">
             <img src='../../assets/img/anuncio_prueba1.png' alt="">
+          </div>
         </div>
       </div>
     </div>
+
+    <div>
+      <ion-list class="list-style">
+        <div *ngFor="let item of buttonMenu">
+            <button expand="block" fill="clear" shape="round">
+              <div>
+                <ion-icon slot="start" name="{{item.icon}}"></ion-icon>
+                <ion-label>{{item.name}}</ion-label>
+              </div>
+            </button>
+        
+        </div>
+      </ion-list>
+    </div>
+
     <div class="content-div animated bounceInUp" >
       <ion-grid fixed>
         <ion-row>
-          <ion-col size="6" (click)="goToSubject(item)" *ngFor="let item of (subjects )">
-            <div class="col-div">
-              <img src="{{item.icon}}" >
-              <!-- <a href="https://www.flaticon.es/iconos-gratis/sensible" title="sensible iconos">Sensible iconos creados por xnimrodx - Flaticon</a> -->
-              <ion-label>{{item.name}}</ion-label>
+          <ion-col  size="6" (click)="goToSubject(subjects2.id)">
+            <div *ngIf="subjects2.name !== 'Cartelera'" class="col-div">
+              <img src="{{subjects2.icon}}" >
+              <div>
+                <ion-label>
+                  {{subjects2.name}}
+                </ion-label>
+              </div>
             </div>
           </ion-col>
+          <ion-col size="6" (click)="goToSubject(subjects1.id)">
+            <div *ngIf="subjects1.name === 'Cartelera'" class="col-div">
+              <img src="{{subjects1.icon}}" >
+              <div>
+                <ion-label>
+                  {{subjects1.name}}
+                </ion-label>
+                <ion-badge class="badge-style">4</ion-badge>
+              </div>
+            </div>
+          </ion-col>
+          <!-- <ion-col  size="6" (click)="goToSubject(subjects3.id)">
+            <div *ngIf="subjects3.name !== 'Cartelera'" class="col-div">
+              <img src="{{subjects3.icon}}" >
+              <div>
+                <ion-label>
+                  {{subjects3.name}}
+                </ion-label>
+              </div>
+            </div>
+          </ion-col> -->
         </ion-row>
       </ion-grid>
     </div>
@@ -46,31 +87,25 @@
       <ion-tabs>
         <!-- Tab bar -->
         <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="account">
+          <ion-tab-button  routerLink="/home">
             <ion-icon name="bookmark-outline"></ion-icon>
             <ion-label>
               Inicio
             </ion-label>
           </ion-tab-button>
-          <ion-tab-button tab="more">
+          <ion-tab-button routerLink="/misReservas">
             <ion-icon name="ear-outline"></ion-icon>
             <ion-label>
               Reservas
             </ion-label>
           </ion-tab-button>
-          <ion-tab-button tab="contact">
+          <ion-tab-button routerLink="/directorio">
             <ion-icon name="call"></ion-icon>
             <ion-label>
               Directorio
             </ion-label>
           </ion-tab-button>
-          <ion-tab-button tab="cash">
-            <ion-icon name="cash-outline"></ion-icon>
-            <ion-label>
-              Pagos
-            </ion-label>
-          </ion-tab-button>
-          <ion-tab-button tab="add">
+          <ion-tab-button routerLink="/masServicios">
             <ion-icon name="add-circle-outline"></ion-icon>
             <ion-label>
               Más

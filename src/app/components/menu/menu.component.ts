@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -7,13 +6,7 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent  {
-  @Input() Menu:string;
   
-  constructor(private menu: MenuController) { }
-
-  OpenCloseMenu() {
-    this.menu.toggle();
-  }
-
+  constructor() { }
 
 }

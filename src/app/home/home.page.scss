@@ -98,59 +98,11 @@ ion-content {
   }
 }
 
-.animated{
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@-webkit-keyframes bounceInUp{
-  0%{
-      opacity: 0;
-      -webkit-transform: translateY(2000px);
-  }
-  60%{
-      opacity: 1;
-      -webkit-transform:translateY(-30px) ;
-  }
-  80%{
-      
-      -webkit-transform:translateY(10px) ;
-  }
-  100%{
-      
-      -webkit-transform:translateY(0) ;
-  }
-}
-
-.bounceInUp{
-  -webkit-animation-name:bounceInUp ;
-  animation-name: bounceInUp;
-}
-
-@keyframes bounceInUp{
-  0%{
-      opacity: 0;
-      -webkit-transform: translateY(2000px);
-  }
-  60%{
-      opacity: 1;
-      -webkit-transform:translateY(-30px) ;
-  }
-  80%{
-      
-      -webkit-transform:translateY(10px) ;
-  }
-  100%{
-      
-      -webkit-transform:translateY(0) ;
-  }
-}
 .banner {
-    position: relative;
+    // position: relative;
     width: 100%;
-
+    // padding:0px !important;
+    // margin: 0px !important;
     &::before {
         content: '';
         position: absolute;
@@ -161,18 +113,24 @@ ion-content {
         background: var(--primary);
     }
     .scroll_container {
+        // display: flex;
         white-space: nowrap;
-        height: 250px;
-        overflow: hidden;
+        // height: 250px;
+        // overflow: hidden;
         overflow-x: scroll;
+        padding: 0px;
+        margin: 0px;
     }
 
+    .div-style-card{
+        width: 100%;
+    }
     .item_scroll {
         display: inline-block;
         // background: url('../../../assets/imgs/item_bg.png');
         background-size: cover;
-        background-repeat: no-repeat;
-        color: var(--white);
+        // background-repeat: no-repeat;
+        // color: var(--white);
         // border-radius: 20px;
         // margin: 20px;
         padding: 5px;
@@ -182,5 +140,30 @@ ion-content {
         overflow: hidden;
         height: 100%;
     }
+    img{
+        border-radius: 10px;
+    }
 }
-  
+
+.badge-style{
+    border-radius: 60px;
+    background-color: #4baeb3ed;
+    width: 30px;
+}
+
+.list-style{
+    display: flex;
+    background-color: inherit;
+    justify-content: center;
+    div{
+        padding-right: 2px;
+        padding-left: 2px;
+    }
+    ion-label{
+        font-size: 15px;
+    }
+    button{
+        background-color: #4baeb3ed;
+        border-radius: 10px;
+    }
+}

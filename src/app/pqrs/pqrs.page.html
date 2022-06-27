@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" routerLink="/home">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+       </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="header">
+    <!-- <img src="assets/img/logotipo-travel.png" /> -->
+  </div>
+
+  <div id="contac">
+    <ion-row>
+      <ion-col size="8" offset="1">
+        <div>
+          <h1 class="titulo">Contactar<br> con soporte</h1>
+        </div>
+      </ion-col>
+      <ion-col size="2" >
+        <div>
+          <ion-icon name="umbrella-outline"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="form">
+    <div [formGroup]="credentialForm">
+      <ion-item color="ion-color-secondary-rgb" class="ion-margin-bottom" lines="none">
+        <ion-input 
+          type="text"
+          placeholder="{{'Titulo'}}"
+          formControlName="vrtitle"
+          autofocus="true"
+          clearInput="true"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-textarea  
+        formControlName="description" 
+        name="description" 
+        color="ion-color-secondary-rgb" 
+        class="ion-margin-bottom" 
+        class="ion-text-area" 
+        rows="6" 
+        cols="20" 
+        placeholder="  Descripcción..."
+        autofocus="true"
+        clearInput="true"
+        required>
+      </ion-textarea>
+        <ion-button (click)="sendPQRS()" expand="block" fill="clear" shape="round">
+          Enviar PQRS
+        </ion-button>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <ion-tabs>
+      <!-- Tab bar -->
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="account">
+          <ion-icon name="bookmark-outline"></ion-icon>
+          <ion-label>
+            Inicio
+          </ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="more">
+          <ion-icon name="ear-outline"></ion-icon>
+          <ion-label>
+            Reservas
+          </ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="contact">
+          <ion-icon name="call"></ion-icon>
+          <ion-label>
+            Directorio
+          </ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="cash">
+          <ion-icon name="cash-outline"></ion-icon>
+          <ion-label>
+            Pagos
+          </ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="add">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          <ion-label>
+            Más
+          </ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
+

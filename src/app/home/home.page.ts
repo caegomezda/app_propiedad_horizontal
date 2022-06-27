@@ -10,6 +10,29 @@ import { UtilitiesService } from '../service/utilities.service';
 export class HomePage {
 
   subjects;
+  //crear formulario con la data a visuliuzar
+  dataCartelera:any = [
+    {
+      icon: '../../assets/icon/temporal-icon.png',
+      name: '#servicio_por_definir',
+      id: '/profile',
+      img:'../../assets/img/anuncio_prueba1.pn'
+    },
+    {
+      icon: '../../assets/icon/temporal-icon.png',
+      name: '#servicio_por_definir',
+      id: '/profile',
+      img:'../../assets/img/anuncio_prueba1.pn'
+    },
+    {
+      icon: '../../assets/icon/temporal-icon.png',
+      name: '#servicio_por_definir',
+      id: '/profile',
+      img:'../../assets/img/anuncio_prueba1.pn'
+    },
+  ]
+
+  isload:Boolean = false;
   constructor(
     private router: Router,
     private utilities : UtilitiesService) { }
@@ -18,48 +41,39 @@ export class HomePage {
     this.subjects=[
       {
         icon: '../../assets/icon/temporal-icon.png',
-        name: '#servicio_por_definir',
-        id: '/profile'
+        name: 'Cartelera',
+        id: '/cartelera'
       },
       {
         icon: '../../assets/icon/temporal-icon.png',
-        name: '#servicio_por_definir',
-        id: '/principal'
+        name: 'Asambleas',
+        id: '/asambleas'
       },
       {
         icon: '../../assets/icon/temporal-icon.png',
-        name: '#servicio_por_definir',
-        id: '/intermunicipal'
+        name: 'PQRS',
+        id: '/contactanos'
       },
       {
         icon: '../../assets/icon/temporal-icon.png',
-        name: '#servicio_por_definir',
-        id: '/contac'
+        name: 'Otros',
+        id: '/otros'
       },      
-      {
-        icon: '../../assets/icon/temporal-icon.png',
-        name: '#servicio_por_definir',
-        id: '/profile'
-      },
-      {
-        icon: '../../assets/icon/temporal-icon.png',
-        name: '#servicio_por_definir',
-        id: '/principal'
-      },
-      {
-        icon: '../../assets/icon/temporal-icon.png',
-        name: '#servicio_por_definir',
-        id: '/intermunicipal'
-      },
-      {
-        icon: '../../assets/icon/temporal-icon.png',
-        name: '#servicio_por_definir',
-        id: '/contac'
-      },
     ];
+  }
+  ionViewWillEnter(){
+    this.isload = true
   }
   //<a href="https://www.flaticon.es/iconos-gratis/sensible" title="sensible iconos">Sensible iconos creados por xnimrodx - Flaticon</a>
   goToSubject(item){
     this.router.navigateByUrl(item.id, {replaceUrl: true});
+  }
+
+  goInfoCartelera(item){
+    console.log('item',item);
+  }
+
+  signOut(){
+    console.log('SALIR APLICACION');
   }
 }

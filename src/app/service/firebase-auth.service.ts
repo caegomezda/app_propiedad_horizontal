@@ -36,24 +36,30 @@ export class FirebaseAuthService {
   }
 
   async SendVerificationMail() {
+    console.log('this.afAuth.currentUser',this.afAuth.currentUser);
     let result = (await this.afAuth.currentUser).sendEmailVerification();
+    console.log('result',result);
     return result 
   }
 
   async signUp(credentialForm){
     let email = credentialForm.email;
     let password = credentialForm.password;
-    await this.userCreationRealTimeData({email,password});
+    let code = credentialForm.code;
+    console.log('credentialForm',credentialForm);
+    await this.userCreationRealTimeData({email,password,code});
   }
 
-  async userCreationRealTimeData({ email, password }): Promise<any>{
+  async userCreationRealTimeData({ email, password, code }): Promise<any>{
     this.credential = await this.afAuth.createUserWithEmailAndPassword(
       email,
-      password
+      password,
     );
+    console.log('this.credential',this.credential);
     // this.utilities.saveUserCredential(this.credential);
     let creationTime = this.credential.user.metadata.createdAt;
     let uid = this.credential.user.uid;
+    let cowd = code
     let newForm = {
       email: email,
       name:"",
@@ -61,7 +67,8 @@ export class FirebaseAuthService {
       uid:uid,
       isActive:true,
       phone:"",
-      userType:"user"
+      userType:"user",
+      code:cowd
     }
     this.firebaseApi.addUser(this.credential,newForm,1)
   }

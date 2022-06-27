@@ -24,6 +24,7 @@ export class FirebaseApiService {
     let url = await this.utilities.getUrlType(urlType)
     let accessToken = await credential['token'];
     apiUrl = `${url}/${uid}.json?auth=${accessToken}`;
+    console.log('apiUrl',apiUrl);
     if (urlType === 3) {
       apiUrl = `${url}/movements.json?auth=${accessToken}`;
     }
@@ -37,6 +38,7 @@ export class FirebaseApiService {
       uid:credential.user.uid,
       token:await credential.user._delegate.accessToken
     }
+    console.log('credentialUser',credentialUser);
     await this.AddInstance(credentialUser,newForm,urlType);
   }
 
@@ -59,29 +61,29 @@ export class FirebaseApiService {
     return data
   }
 
-  async getDeliveryData(status){
-    let credential = await this.getCredential()
-    let params = {}
-    if (status === 1) {
-      params = {
-        orderBy:"isPending",
-        equalTo:"true"
-      }
-    } else if( status === 2){
-      params = {
-        orderBy:"isTaken",
-        equalTo:"true"
-      }
-    }else if (status === 3){
-      params = {
-        orderBy:"isDone",
-        equalTo:"true"
-      }
-    }
+  // async getDeliveryData(status){
+  //   let credential = await this.getCredential()
+  //   let params = {}
+  //   if (status === 1) {
+  //     params = {
+  //       orderBy:"isPending",
+  //       equalTo:"true"
+  //     }
+  //   } else if( status === 2){
+  //     params = {
+  //       orderBy:"isTaken",
+  //       equalTo:"true"
+  //     }
+  //   }else if (status === 3){
+  //     params = {
+  //       orderBy:"isDone",
+  //       equalTo:"true"
+  //     }
+  //   }
 
-    let result  = await this.fetchUserInfo2Api(credential,4,params);
-    await this.getData(result,2);
-  }
+  //   let result  = await this.fetchUserInfo2Api(credential,4,params);
+  //   await this.getData(result,2);
+  // }
 
   async fetchUserInfo2Api(credential,urlType,params){
     let url = await this.utilities.getUrlType(urlType);
@@ -111,38 +113,38 @@ export class FirebaseApiService {
     }
   }
 
-  async taxiDelivery(userData,positionSet,positionSetString){
+  // async taxiDelivery(userData,positionSet,positionSetString){
 
-    let creationTime = await this.utilities.fechaHoyInv(0);
-    let credential = {
-      uid:userData['uid'],
-      token:await this.utilities.getToken()
-    }
-    let newForm = {
-      creationDate:creationTime[1],
-      uiserId:credential['uid'],
-      isActive:true,
-      isPending:true,
-      istaken:false,
-      isDone:false,
-      positionSet:positionSet,
-      positionSetString:positionSetString
-    }
-    console.log('newForm',newForm);
-    return await this.afs.doc(
-      `movement/${credential['uid']}`
-      ).set({
-        creationDate:creationTime[1],
-        uiserId:credential['uid'],
-        isActive:true,
-        isPending:true,
-        istaken:false,
-        isDone:false,
-        // positionSet:positionSet,
-        positionSet:"camilo estuvo aquii",
-        positionSetString:positionSetString
-      });
-  }
+  //   let creationTime = await this.utilities.fechaHoyInv(0);
+  //   let credential = {
+  //     uid:userData['uid'],
+  //     token:await this.utilities.getToken()
+  //   }
+  //   let newForm = {
+  //     creationDate:creationTime[1],
+  //     uiserId:credential['uid'],
+  //     isActive:true,
+  //     isPending:true,
+  //     istaken:false,
+  //     isDone:false,
+  //     positionSet:positionSet,
+  //     positionSetString:positionSetString
+  //   }
+  //   console.log('newForm',newForm);
+  //   return await this.afs.doc(
+  //     `movement/${credential['uid']}`
+  //     ).set({
+  //       creationDate:creationTime[1],
+  //       uiserId:credential['uid'],
+  //       isActive:true,
+  //       isPending:true,
+  //       istaken:false,
+  //       isDone:false,
+  //       // positionSet:positionSet,
+  //       positionSet:"camilo estuvo aquii",
+  //       positionSetString:positionSetString
+  //     });
+  // }
 
 }
 

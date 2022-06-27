@@ -2,6 +2,7 @@ export const environment = {
   firebase: {
     projectId: 'apppropiedadhorizontal',
     appId: '1:894207999938:web:7b3f63d907b940371aa05b',
+    databaseURL: 'https://apppropiedadhorizontal-default-rtdb.firebaseio.com',
     storageBucket: 'apppropiedadhorizontal.appspot.com',
     apiKey: 'AIzaSyCkZUxxHQeB_gbOP2Jp-feqPK5FNZR24kQ',
     authDomain: 'apppropiedadhorizontal.firebaseapp.com',

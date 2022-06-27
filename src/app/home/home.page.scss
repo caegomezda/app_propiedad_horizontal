@@ -21,7 +21,7 @@ ion-content {
   }
   
   .user-div{
-      padding: 20px;
+      padding: 10px;
       width: 100%;
       height: 170px;
       --background: linear-gradient(#eaf3f3 0%, #71c6ca 100%);
@@ -59,11 +59,11 @@ ion-content {
     //   background: white;
       --background: linear-gradient(#eaf3f3 0%, #71c6ca 100%);
       width: 100%;
-      height: 500px;
+    //   height: 500px;
       border-top-right-radius: 75px;
       border-top-left-radius: 75px;
-      margin-top: 30px;
-      padding-top: 30px;
+    //   margin-top: 30px;
+    //   padding-top: 30px;
 
       .hello{
           font-weight: 600;
@@ -147,3 +147,40 @@ ion-content {
       -webkit-transform:translateY(0) ;
   }
 }
+.banner {
+    position: relative;
+    width: 100%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 77px;
+        background: var(--primary);
+    }
+    .scroll_container {
+        white-space: nowrap;
+        height: 250px;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    .item_scroll {
+        display: inline-block;
+        // background: url('../../../assets/imgs/item_bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: var(--white);
+        // border-radius: 20px;
+        // margin: 20px;
+        padding: 5px;
+        // padding-bottom: 15px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+    }
+}
+  

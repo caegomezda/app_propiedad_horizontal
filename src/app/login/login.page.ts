@@ -116,4 +116,10 @@ export class LoginPage implements OnInit {
     }
   }
 
+  signIn2(){
+    this.router.navigateByUrl('/home', {replaceUrl: true});
+  }
+
+  
+
 }

@@ -1,22 +1,31 @@
-
-<ion-content>
-  <div class="main-container-div">
-    <!-- <ion-button slot="start" class="menu-btn"> -->
-      <!-- <ion-menu-button color="ligth"></ion-menu-button> -->
-      <ion-icon routerLink="/login" class="menu-btn" name="exit-outline"></ion-icon>
-    <!-- </ion-button> -->
-  
-    <div class="user-div">
-        <div class="first-div" slot="end" >
-          <ion-label class="welcome">Bienvenido</ion-label>
-          <ion-label class="name">#nombre_usuario</ion-label>
-        </div>
-        <img src="../../assets/img/icon-apao.png">
+<ion-header>
+	<ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="login" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <div class="title">
+      <ion-title>
+        <span>
+          Inicio
+        </span>
+      </ion-title>
     </div>
-  
+    <ion-button (click)="signOut()" expand="block" fill="clear" shape="round" slot="end">
+      <ion-icon name="exit-outline"></ion-icon>
+    </ion-button>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="false" scroll-y="false">
+  <div  *ngIf="isload" class="main-container-div">
+    <div class="banner">
+      <div *ngIf="isload" class="scroll_container">
+        <div class="item_scroll" *ngFor="let item of dataCartelera" (click)="goInfoCartelera(item)">
+            <img src='../../assets/img/anuncio_prueba1.png' alt="">
+        </div>
+      </div>
+    </div>
     <div class="content-div animated bounceInUp" >
-      <ion-label class="hello">Selecciona un servicio</ion-label>
-  
       <ion-grid fixed>
         <ion-row>
           <ion-col size="6" (click)="goToSubject(item)" *ngFor="let item of (subjects )">
@@ -31,4 +40,44 @@
     </div>
   </div>
   </ion-content>
+
+  <ion-footer collapse="fade">
+    <ion-toolbar>
+      <ion-tabs>
+        <!-- Tab bar -->
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="account">
+            <ion-icon name="bookmark-outline"></ion-icon>
+            <ion-label>
+              Inicio
+            </ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="more">
+            <ion-icon name="ear-outline"></ion-icon>
+            <ion-label>
+              Reservas
+            </ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="contact">
+            <ion-icon name="call"></ion-icon>
+            <ion-label>
+              Directorio
+            </ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="cash">
+            <ion-icon name="cash-outline"></ion-icon>
+            <ion-label>
+              Pagos
+            </ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="add">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <ion-label>
+              Más
+            </ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  </ion-footer>
   

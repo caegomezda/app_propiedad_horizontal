@@ -39,23 +39,27 @@ export class SignupPage implements OnInit {
 
     });
   }
-  async  signUp(){
-      const loading = await this.loadingController.create();
-      await loading.present();
-      this.firebaseAuth.signUp(this.credentialFormSignUp.value).then( user =>{
-        loading.dismiss();
-        this.firebaseAuth.SendVerificationMail();
-        // this.router.navigateByUrl('/validate', {replaceUrl: true});
 
-      }, async err =>{
-        loading.dismiss();
-        const alert = await this.alertController.create({
-          header: 'Registro fallido',
-          message: err.message,
-          buttons: ['OK'],
-        });
-        await alert.present();
-      })
+  async  signUp(){
+    console.log('signup');
+    const loading = await this.loadingController.create();
+    await loading.present();
+    console.log('this.credentialFormSignUp',this.credentialFormSignUp);
+    this.firebaseAuth.signUp(this.credentialFormSignUp.value).then( async user =>{
+      loading.dismiss();
+      console.log('user',user);
+      await this.firebaseAuth.SendVerificationMail();
+      // this.router.navigateByUrl('/validate', {replaceUrl: true});
+
+    }, async err =>{
+      loading.dismiss();
+      const alert = await this.alertController.create({
+        header: 'Registro fallido',
+        message: err.message,
+        buttons: ['OK'],
+      });
+      await alert.present();
+    })
   }
   
   get email(){
@@ -136,6 +140,16 @@ export class SignupPage implements OnInit {
       this.passwordTypeInput_2 = this.passwordTypeInput_2 === 'text' ? 'password' : 'text';
     }
   }
+
+  async signUp2(){
+    const alert = await this.alertController.create({
+      header:'Prueba',
+      subHeader: 'prueba',
+      message: 'Esta es una prueba, registro deshbilitado',
+      buttons: ['Cerrar']
+  })
+  await alert.present();
+}
   
 
 }

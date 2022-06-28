@@ -51,7 +51,7 @@ export class HomePage {
     {
       icon: 'megaphone-sharp',
       name: 'Asamblea',
-      id: '/asamblea'
+      id: '/asambleas'
     },
     {
       icon: 'gift-sharp',
@@ -61,7 +61,7 @@ export class HomePage {
     {
       icon: 'car-sharp',
       name: 'Pico y placa',
-      id: '/cartelera'
+      id: '/picoyplaca'
     },
     {
       icon: 'accessibility-sharp',
@@ -88,6 +88,7 @@ export class HomePage {
   }
   //<a href="https://www.flaticon.es/iconos-gratis/sensible" title="sensible iconos">Sensible iconos creados por xnimrodx - Flaticon</a>
   goToSubject(item){
+    console.log('item',item);
     this.router.navigateByUrl(item, {replaceUrl: true});
   }
 

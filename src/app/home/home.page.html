@@ -31,7 +31,7 @@
     <div>
       <ion-list class="list-style">
         <div *ngFor="let item of buttonMenu">
-            <button expand="block" fill="clear" shape="round">
+            <button routerLink="{{item.id}}" expand="block" fill="clear" shape="round">
               <div>
                 <ion-icon slot="start" name="{{item.icon}}"></ion-icon>
                 <ion-label>{{item.name}}</ion-label>
@@ -93,7 +93,7 @@
               Inicio
             </ion-label>
           </ion-tab-button>
-          <ion-tab-button routerLink="/misReservas">
+          <ion-tab-button routerLink="/mis-reservas">
             <ion-icon name="ear-outline"></ion-icon>
             <ion-label>
               Reservas
@@ -105,7 +105,7 @@
               Directorio
             </ion-label>
           </ion-tab-button>
-          <ion-tab-button routerLink="/masServicios">
+          <ion-tab-button routerLink="/mas-servicios">
             <ion-icon name="add-circle-outline"></ion-icon>
             <ion-label>
               Más
